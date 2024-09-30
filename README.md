@@ -23,7 +23,8 @@ Aplicación en Angular 16 que permite a los usuarios crear tareas con usuarios a
 - **Angular:** Framework de front-end para construir la aplicación.
 - **TypeScript:** Lenguaje de programación para escribir componentes de Angular.
 - **Reactive Forms:** Módulo de Angular para manejar formularios de manera eficiente.
-- **Ng-Select:** Componente de Angular para selectores con múltiples funcionalidades.
+- **Moment:** Manejo de fechas.
+- **UUID** Generación IDs aleatorios.
 - **SCSS:** Lenguaje de estilos para diseñar la interfaz de usuario de la aplicación.
 
 ## Instalación
