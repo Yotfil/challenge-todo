@@ -1,28 +1,60 @@
-# Challenge
+# Challenge ToDo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Aplicación en Angular 16 que permite a los usuarios crear tareas con usuarios asociados y sus respectivas habilidades. El formulario incluye la adición y eliminación dinámica de usuarios y sus habilidades, junto con validaciones para asegurar la integridad de los datos.
 
-## Development server
+## Tabla de Contenidos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Características](#características)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Licencia](#licencia)
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Crear Tareas:** Ingresa el título de la tarea, su estado de completado y la fecha límite.
+- **Usuarios Dinámicos:** Agrega o elimina múltiples usuarios asociados a una tarea.
+- **Habilidades Anidadas:** Para cada usuario, agrega o elimina múltiples habilidades.
+- **Validación de Formularios:** Asegura que todos los campos requeridos estén completos y evita la selección de usuarios duplicados.
+- **Formularios Reactivos:** Utiliza los Formularios Reactivos de Angular para un manejo robusto de formularios.
 
-## Build
+## Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular:** Framework de front-end para construir la aplicación.
+- **TypeScript:** Lenguaje de programación para escribir componentes de Angular.
+- **Reactive Forms:** Módulo de Angular para manejar formularios de manera eficiente.
+- **Ng-Select:** Componente de Angular para selectores con múltiples funcionalidades.
+- **SCSS:** Lenguaje de estilos para diseñar la interfaz de usuario de la aplicación.
 
-## Running unit tests
+## Instalación
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Sigue los pasos a continuación para configurar y ejecutar la aplicación en tu entorno local.
 
-## Running end-to-end tests
+1. **Clonar el Repositorio**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   git clone https://github.com/Yotfil/challenge-todo.git
+   
+2. **Navegar al directorio del proyecto**
+    ```bash
+       cd formulario-gestion-tareas
+    
+3. **Instalar Dependencias**
+    ```bash
+       npm install
 
-## Further help
+4. **Ejecutar Aplicación**
+    ```bash
+       ng serve -o
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# challenge-todo
+5. Ir al navegador http://localhost:4200/.
+
+
+
+
+
+
+
+
+
+
