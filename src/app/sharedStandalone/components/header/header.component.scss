@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/variables";
+.header {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: $shadow1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__item {
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(168, 168, 168, 0.2);
+    }
+  }
+
+  &__link {
+    height: $mpsize-xl;
+    padding: 0 $mpsize-s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $font-color;
+    &--active {
+      background: transparent;
+      color: $main-color;
+      box-shadow: inset 1px 1px 3px #110349, inset 8px 8px 15px #36315c,
+        inset -1px -1px 1px #bdbddc, inset -1px -1px 4px #36315c;
+    }
+  }
+}

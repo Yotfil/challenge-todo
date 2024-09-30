@@ -1,0 +1,75 @@
+<div class="container">
+  <form [formGroup]="form" class="form inner-container--bg">
+    <div class="form__group">
+      <label for="title">Nombre de la tarea</label>
+      <input type="text" class="form-control" id="title" name="title" formControlName="title">
+      <small *ngIf="validateError('title')">El campo nombre de la tarea es obligatorio
+      </small>
+    </div>
+
+    <div class="form__group">
+      <label for="dueDate">Fecha límite</label>
+      <input type="date" class="form-control" id="dueDate" [min]="today" name="dueDate" formControlName="dueDate">
+      <small *ngIf="validateError('dueDate')">El campo Fecha es obligatorio</small>
+    </div>
+    <div formArrayName="users" class="inner-container inner-container--bg">
+      <p>Personas Asociadas:</p>
+      <ng-container *ngFor="let person of getFormArray('users').controls; let i = index">
+        <div [formGroupName]="i" class="inner-container">
+          <div class="form__group">
+            <label for="name{{i}}">Nombre</label>
+            <select class="ng-select" (change)="isNameUsed($event, i)" formControlName="name" id="name{{i}}">
+              <option value="" disabled> Selecciona una opción</option>
+              <option *ngFor="let user of users" value="{{user.id}}">{{user.name}}</option>
+            </select>
+            <small *ngIf="error === i">Ya está el usuario</small>
+            <small *ngIf="validateErrorUser(i, 'name')">Agregue al menos un usuario</small>
+          </div>
+          <div class="form__group">
+            <label for="age{{i}}">Edad</label>
+            <input type="number" class="form-control" id="age{{i}}" name="age" formControlName="age">
+            <small *ngIf="validateErrorUser(i, 'age')">La edad es obligatoria</small>
+          </div>
+
+          <div formArrayName="skills" class="inner-container inner-container--bg">
+            <p>Habilidades:</p>
+            <ng-container *ngFor="let skillForm of getNestedFormArray('users', i, 'skills').controls; let j = index">
+              <div [formGroupName]="j" class="form__group">
+                <select class="ng-select" (change)="isSkillUsed($event, i, j)" formControlName="skill"
+                  id="skill{{i}}{{j}}">
+                  <option value="" disabled> Selecciona una opción</option>
+                  <option *ngFor="let skill of skills" value="{{skill.id}}">{{skill.skill}}</option>
+                </select>
+                <small *ngIf="errorSkill === j">Ya está la skill</small>
+                <small *ngIf="validateErrorSkill(i, j, 'skill')">Agregue al menos una skill</small>
+                <button [disabled]="isSkillValid(i, j)"
+                  *ngIf="j===getNestedFormArray('users', i, 'skills').controls.length-1" type="button"
+                  class="btn btn-secondary" (click)="addSkill(i)">
+                  Agregar Habilidad
+                </button>
+                <button *ngIf="j!== getNestedFormArray('users', i, 'skills').controls.length-1" type="button"
+                  class="btn btn-danger" (click)="removeSkill(i, j)">
+                  Eliminar Habilidad
+                </button>
+
+              </div>
+            </ng-container>
+
+          </div>
+          <div class="btns-container">
+            <button [disabled]="!isUserGroupValid(i)" *ngIf="i===getFormArray('users').controls.length-1" type="button"
+              (click)="addPerson()">Agregar
+              Persona</button>
+            <button [disabled]="getFormArray('users').controls.length === 1" type="button"
+              (click)="removePerson(i)">Eliminar
+              Persona
+            </button>
+          </div>
+          <span class="separator" *ngIf="i!==getFormArray('users').controls.length-1"></span>
+        </div>
+      </ng-container>
+    </div>
+    <button [disabled]="!isValidForm()" type="submit" class="btn btn-primary" (click)="createTask()">Crear
+      Tarea</button>
+  </form>
+</div>

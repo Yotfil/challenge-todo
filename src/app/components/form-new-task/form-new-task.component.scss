@@ -1,0 +1,90 @@
+@import "../../../assets/styles/variables";
+
+.ng-select.ng-select ::ng-deep .ng-select-container {
+  min-height: 0px;
+  border-radius: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  padding: $mpsize-l $mpsize;
+  box-shadow: $shadow1;
+  border-radius: $mpsize-xs;
+}
+.inner-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &--bg {
+    padding: $mpsize;
+    background-color: rgba(205, 205, 214, 0.333);
+    border-radius: $mpsize-xs;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: auto;
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: $mpsize;
+    & input,
+    & select {
+      width: 100%;
+      padding: $mpsize-s;
+      border: 1px solid gray;
+      border-radius: $mpsize-xs;
+      margin-top: $mpsize-xs;
+    }
+  }
+}
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  margin: $mpsize-l 0;
+}
+
+small {
+  color: $error-color;
+  font-size: $font-size-s;
+}
+button {
+  border-radius: $mpsize;
+  padding: $mpsize-s;
+  border: 1px solid $main-color;
+  background-color: transparent;
+  display: block;
+  margin-top: $mpsize;
+  &:disabled {
+    background-color: rgb(171, 171, 171);
+    color: white;
+    border: none;
+  }
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: $mpsize;
+  button {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 50%;
+  }
+}

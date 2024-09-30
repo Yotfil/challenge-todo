@@ -1,0 +1,36 @@
+<div class="card" [ngClass]="classStatus('completed', 'pending')">
+  <div class="card__header">
+    <h3 class="card__title">{{task.title}}</h3>
+    <div class="card__date">
+      <small>
+        <span>Fecha lím:</span>
+        <span><b>
+            {{task.dueDate | date: 'dd/MM/yyyy'}}
+          </b>
+        </span>
+      </small>
+      <small [ngClass]="classStatus('text-completed', 'text-pending')">
+        {{task.completed? 'Completada': 'Pendiente'}}
+      </small>
+    </div>
+  </div>
+  <div class="card__body">
+    <p class="card__subtitle">Personas asociadas</p>
+    <ul class="card__items-container">
+      <li *ngFor="let persona of task.users" class="card__item">
+        <p>{{persona.name}} ({{persona.age}} años)</p>
+        <div>
+          <span>
+            Habilidades:
+          </span>
+          <span>
+            <strong>
+              {{setSkills(persona.skills)}}
+            </strong>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button (click)="completeTask()" *ngIf="!task.completed">Completar</button>
+</div>

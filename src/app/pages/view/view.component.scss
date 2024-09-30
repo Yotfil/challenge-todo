@@ -1,0 +1,44 @@
+@import "../../../assets/styles/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $mpsize;
+}
+
+.filtros {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: $mpsize;
+  column-gap: $mpsize-xs;
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: $mpsize-xs;
+  }
+  &__btn {
+    border: 1px solid $main-color;
+    color: $main-color;
+    background-color: transparent;
+    cursor: pointer;
+    padding: $mpsize-xs;
+    border-radius: 16px;
+    &:hover {
+      background: transparent;
+      color: $main-color;
+      border: none;
+      box-shadow: inset 1px 1px 3px #110349, inset 8px 8px 15px #36315c,
+        inset -1px -1px 1px #bdbddc, inset -1px -1px 4px #36315c;
+    }
+  }
+}
+
+.active {
+  background: transparent;
+  color: $main-color;
+  box-shadow: inset 1px 1px 1px #110349, inset 5px 5px 10px #36315c,
+    inset -1px -1px 1px #bdbddc, inset -1px -1px 2px #36315c;
+  border: none;
+}

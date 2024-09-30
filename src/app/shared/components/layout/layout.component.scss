@@ -1,0 +1,13 @@
+@import "../../../../assets/styles/variables";
+
+.layout {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: $mpsize-2xl $mpsize $mpsize-xl;
+  &__title {
+    font-size: $font-size-xl;
+    color: $font-color;
+    margin-bottom: $mpsize;
+  }
+}

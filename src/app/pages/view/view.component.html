@@ -1,0 +1,18 @@
+<app-layout [title]="title">
+  <div class="filtros">
+    <p>
+      filtros:
+    </p>
+
+    <ul class="filtros__container">
+      <li *ngFor="let btn of buttons" class="filtros__item">
+        <button (click)="filter(btn)" [ngClass]="{'active': btn === activeBtn}" class="filtros__btn">{{btn}}</button>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <ng-container *ngFor="let task of tasks$ | async">
+      <app-task [task]="task"></app-task>
+    </ng-container>
+  </div>
+</app-layout>

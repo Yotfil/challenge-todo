@@ -1,0 +1,84 @@
+@import "../../../assets/styles/variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: $shadow1;
+  border-radius: 4px;
+  padding: $mpsize;
+  height: 100%;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: $mpsize;
+    row-gap: $mpsize-2xs;
+  }
+  &__aditional-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    column-gap: $mpsize-xs;
+  }
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    column-gap: $mpsize-xs;
+  }
+  &__subtitle {
+    font-weight: bold;
+    margin-bottom: $mpsize-xs;
+  }
+  &__items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: $mpsize;
+    row-gap: $mpsize-xs;
+    padding-left: $mpsize-l;
+  }
+  &__item {
+    list-style: disc;
+  }
+}
+
+.completed {
+  background-color: $light-success-color;
+}
+
+.pending {
+  background-color: $ligth-error-color;
+}
+
+.text-success {
+  color: $success-color;
+}
+
+.text-pending {
+  color: $error-color;
+}
+
+button {
+  border: 1px solid $main-color;
+  color: $main-color;
+  background-color: transparent;
+  cursor: pointer;
+  padding: $mpsize-xs;
+  border-radius: 16px;
+  &:hover {
+    background: transparent;
+    color: $main-color;
+    border: none;
+    box-shadow: inset 1px 1px 3px #490314, inset 8px 8px 15px #5c3141,
+      inset -1px -1px 1px #dcbdca, inset -1px -1px 4px #5c3143;
+  }
+}
